@@ -6,7 +6,7 @@ import '../App.css'
 function Navbars() {
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" >
+            <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'white'}}>
                 <Container>
                     <Link className="brand">
                         <Navbar.Brand href="#home" style={{fontSize:"25px", color:'orange'}}>PizzaShop</Navbar.Brand>
