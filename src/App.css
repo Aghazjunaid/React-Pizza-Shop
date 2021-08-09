@@ -21,3 +21,58 @@
   font-weight: bold;
   font-size: 16px;
 }
+.header-img{
+  background-image: url("/src/bg.jpg");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.centered{
+  margin-top: 125px;
+}
+.about-color{
+  width: 500px;
+  height: auto;
+}
+.delBtn{
+  border-radius: 25px;
+  background-color: rgb(255, 69, 79);
+  word-spacing: 0;
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+}
+.weight{
+  font-size: 70px;
+  word-spacing: 0px;
+}
+.piziniMargin{
+  margin-top: -40px;
+}
+.welcome{
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 100%;
+}
+.detailCol{
+  background-color: #252525 !important;
+}
+.detailHeading{
+  font-size: 65px;
+  font-weight: bold;
+  line-height: 100%;
+}
+.detailSubHeading{
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 24px;
+  margin-bottom: 0;
+  opacity: 0.5;
+}
+.welcome-menu{
+  font-size: 40px;
+  font-weight: bold;
+}
+
