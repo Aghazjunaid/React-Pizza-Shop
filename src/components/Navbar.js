@@ -17,7 +17,7 @@ function Navbars() {
                         </Nav>
                         <Nav>
                             <Link to="/" className="unlink mx-2 navStyle mt-2" >Home</Link>
-                            <Link to="/pizza" className="unlink mx-2 navStyle mt-2">Pizzas</Link>
+                            <Link to="/pizzas" className="unlink mx-2 navStyle mt-2">Pizzas</Link>
                             <Link to="/cart" className="unlink mx-2">
                                 <div className="cart">
                                     <span className="mx-2">0</span>
