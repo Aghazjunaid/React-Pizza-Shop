@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import '../App.css'
-import {Row, Col, Container} from 'react-bootstrap' 
+import {Row, Button, Container} from 'react-bootstrap' 
 
 function Products() {
+    const [data, setData] = useState([]);
+    useEffect( () => {
+      getData()
+    }, []);
+  
+    async function getData(){
+      let result = await fetch("http://localhost:8000/product");
+      result = await result.json();
+      setData(result.data);
+      console.log(result.data)
+    }
+  
     return (
         <div>
             <div className="container text-center">
@@ -12,9 +24,20 @@ function Products() {
             </div>
             <Container>
                 <Row>
-                    <Col md={4}>1 of 3</Col>
-                    <Col md={4}>1 of 3</Col>
-                    <Col md={4}>1 of 3</Col>
+                {
+                   data.map(product => (
+                    <div className="col-md-4 mt-2 text-center">
+                        <img src={product.image} alt="pizza" className="img-fluid"/>
+                        <h2>{product.name}</h2>
+                        <div style={{fontSize:"17px"}}>{product.description}</div>
+                        <div className="price">₹ { product.price }</div>
+                        <div className="prodBtn">
+                            <Button variant="warning">Add To Cart</Button>
+                            <Button variant="primary">Order Now</Button>{' '}
+                        </div>
+                    </div>
+                   ))
+                }
                 </Row>
             </Container>
         </div>
