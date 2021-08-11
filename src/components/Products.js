@@ -25,7 +25,7 @@ function Products() {
             <Container>
                 <Row>
                 {
-                   data.map(product => (
+                   data.slice(0, 6).map(product => (
                     <div className="col-md-4 mt-2 text-center">
                         <img src={product.image} alt="pizza" className="img-fluid"/>
                         <h2>{product.name}</h2>

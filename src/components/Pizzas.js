@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../App.css'
 import {Row, Button, Container} from 'react-bootstrap' 
 import Navbars from './Navbar'
+import Footer from "./Footer";
 
 function Pizzas() {
     const [data, setData] = useState([]);
@@ -19,8 +20,7 @@ function Pizzas() {
     return (
         <>
             <Navbars/>
-            <div>
-            <div className="container text-center">
+            <div className="container text-center mt-5">
                 <h2 className="text-dark text-center">Pizza Menu</h2>
             </div>
             <Container>
@@ -41,7 +41,7 @@ function Pizzas() {
                 }
                 </Row>
             </Container>
-        </div>
+            <Footer/>
         </>
     )
 }

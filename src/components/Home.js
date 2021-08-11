@@ -3,6 +3,7 @@ import Navbars from './Navbar'
 import Body from './Body'
 import '../App.css'
 import Products from './Products'
+import Footer from './Footer'
 
 function Home() {
     return (
@@ -12,6 +13,7 @@ function Home() {
             <Body/>
             </div>
             <Products/>
+            <Footer/>
         </>
     )
 }
