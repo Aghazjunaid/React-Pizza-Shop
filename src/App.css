@@ -75,4 +75,11 @@
   font-size: 40px;
   font-weight: bold;
 }
-
+.price{
+  font-size: 25px;
+  font-weight: 600;
+}
+.prodBtn{
+  display: flex;
+  justify-content: space-around;
+}
