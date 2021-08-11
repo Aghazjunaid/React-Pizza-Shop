@@ -9,10 +9,10 @@ function Body() {
                         Pizza Delivery
                     </h2>
                     <div className="text-uppercase text-white font-weight-bold weight">
-                        Maestro
+                        Pizza
                     </div>
                     <div className="text-uppercase text-white weight font-weight-bold piziniMargin">
-                        Pizinni
+                        Shop
                     </div>
                     <p className=" text-white  about-color">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
