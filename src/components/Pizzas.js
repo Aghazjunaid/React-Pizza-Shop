@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import '../App.css'
 import {Row, Button, Container} from 'react-bootstrap' 
+import Navbars from './Navbar'
 
-function Products() {
+function Pizzas() {
     const [data, setData] = useState([]);
     useEffect( () => {
       getData()
@@ -14,13 +15,13 @@ function Products() {
       setData(result.data);
       console.log(result.data)
     }
-  
+
     return (
-        <div>
+        <>
+            <Navbars/>
+            <div>
             <div className="container text-center">
                 <h2 className="text-dark text-center">Pizza Menu</h2>
-                <div className="welcome-menu">WELCOME TO</div>
-                <div className="welcome-menu">PIZZA SHOP</div>
             </div>
             <Container>
                 <Row>
@@ -41,7 +42,8 @@ function Products() {
                 </Row>
             </Container>
         </div>
+        </>
     )
 }
 
-export default Products
+export default Pizzas
