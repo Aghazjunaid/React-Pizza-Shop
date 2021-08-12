@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import {Row,Col, Button, Container} from 'react-bootstrap' 
 import Navbars from './Navbar'
 import '../App.css'
+import Footer from './Footer'
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function ProductDetails(props) {
     const [data, setData] = useState([]);
@@ -32,11 +34,20 @@ function ProductDetails(props) {
                     </Col>
                     <Col md={6}>
                         <div>
+                            <h2 style={{color:"black"}} className="mt-5">{data.name}</h2>
+                            <div style={{fontSize:"15px", color:"black"}}>{data.description}</div>
+                            <div className="price mt-2" style={{color:"#850f0f"}}>₹ { data.price }</div>
+                            <div className="mt-5 offer">
+                                <div><i class="bi bi-caret-right-fill"></i> Bank Offer 5% Unlimited Cashback on Pizzashop Axis Bank Credit Card</div>
+                                <div><i class="bi bi-caret-right-fill"></i>  Bank Offer 10% Off on Bank of Baroda debit card first time transaction, Terms and Condition apply</div>
+                                <div><i class="bi bi-caret-right-fill"></i>  Purchase this Pizza and Chances to Get Extra ₹500 Off on Select ACs</div>
+                            </div>
+                            <div className="delivery"><i class="bi bi-truck text-dark"></i>   Delivered Within 30 min after Ordering the Pizza</div>
                         </div>
                     </Col>
-
                 </Row>
             </Container>
+            <Footer/>
         </>
     )
 }

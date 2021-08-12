@@ -83,3 +83,14 @@
   display: flex;
   justify-content: space-around;
 }
+.offer{
+  color: #724b07;
+  font-size: 13px;
+  font-style: italic;
+}
+.delivery{
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #F59E0D;
+}
