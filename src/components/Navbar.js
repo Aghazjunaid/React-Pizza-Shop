@@ -8,7 +8,7 @@ function Navbars() {
         <>
             <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'white'}}>
                 <Container>
-                    <Link className="brand">
+                    <Link to="/" className="brand">
                         <Navbar.Brand href="#home" style={{fontSize:"25px", color:'orange'}}>PizzaShop</Navbar.Brand>
                     </Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{color:'orange'}} />
