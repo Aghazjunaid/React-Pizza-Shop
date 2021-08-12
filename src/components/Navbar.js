@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import {Navbar, Nav, Container} from 'react-bootstrap' 
 import '../App.css'
+import { CartContext } from '../context';
 
 function Navbars() {
+    const { cart } = useContext(CartContext);
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'white'}}>
@@ -20,7 +23,7 @@ function Navbars() {
                             <Link to="/pizzas" className="unlink mx-2 navStyle mt-2">Pizzas</Link>
                             <Link to="/cart" className="unlink mx-2">
                                 <div className="cart">
-                                    <span className="mx-2">0</span>
+                                    <span className="mx-2 text-white brand">{ cart.totalItems ? cart.totalItems : 0 }</span>
                                     <img src="/images/cart.png" alt="cart-icon" style={{color:'black'}}/>
                                 </div>
                             </Link>
