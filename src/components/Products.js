@@ -1,10 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import '../App.css'
 import {Row, Button, Container} from 'react-bootstrap' 
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context';
 
 function Products() {
+    const { cart, setCart } = useContext(CartContext);
     const [data, setData] = useState([]);
+
+    const addToCart = (event, product) => {
+        event.preventDefault();
+        let _cart = {...cart}; // { items: {}}
+        if (!_cart.items) {
+            _cart.items = {}
+        }
+        if (_cart.items[product._id]) {
+            _cart.items[product._id] += 1;
+        } else {
+            _cart.items[product._id] = 1;
+        }
+
+        if(!_cart.totalItems) {
+            _cart.totalItems = 0;
+        }
+        _cart.totalItems += 1;
+        setCart(_cart);
+    }
+
     useEffect( () => {
       getData()
     }, []);
@@ -34,7 +56,7 @@ function Products() {
                             <div style={{fontSize:"17px", color:"black"}}>{product.description}</div>
                             <div className="price mt-2" style={{color:"black"}}>₹ { product.price }</div>
                             <div className="prodBtn mt-2">
-                                <Button variant="warning">Add To Cart</Button>
+                                <Button variant="warning" onClick={(e) => { addToCart(e, product) }}>Add To Cart</Button>
                                 <Button variant="primary">Order Now</Button>
                             </div>
                         </div>
