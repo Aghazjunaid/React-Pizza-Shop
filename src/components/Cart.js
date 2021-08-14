@@ -13,6 +13,7 @@ function Cart() {
     useEffect(() => {
         getData()
         getTotalPrice()
+        deleteData()
     }, []);
 
     async function getData() {
