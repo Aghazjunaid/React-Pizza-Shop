@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Pizzas() {
     const [data, setData] = useState([]);
+    const [quantity, setQuantity] = useState()
 
     useEffect( () => {
       getData()
@@ -17,6 +18,18 @@ function Pizzas() {
       result = await result.json();
       setData(result.data);
       console.log(result.data)
+    }
+
+    async function IncQuanBy1(e,id) {
+        e.preventDefault();
+        setQuantity(1)
+        console.log(id)
+        let result = await fetch("http://localhost:8000/cart/" + id, {
+            method: 'POST',
+            body: JSON.stringify(quantity)
+        });
+        console.log(result)
+        getData()
     }
 
     return (
@@ -36,7 +49,9 @@ function Pizzas() {
                             <div style={{fontSize:"17px", color:"black"}}>{product.description}</div>
                             <div className="price mt-2" style={{color:"black"}}>₹ { product.price }</div>
                             <div className="prodBtn mt-2">
-                                <Button variant="warning">Add To Cart</Button>
+                                <Button variant="warning" onClick={(e) => {
+                                    IncQuanBy1(e,product._id);
+                                }}>Add To Cart</Button>
                                 <Button variant="primary">Order Now</Button>
                             </div>
                         </div>

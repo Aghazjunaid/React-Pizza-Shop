@@ -7,6 +7,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 function ProductDetails(props) {
     const [data, setData] = useState([]);
+    const [quantity, setQuantity] = useState()
+
     console.log(props.match.params._id);
 
     useEffect(async () => {
@@ -16,7 +18,18 @@ function ProductDetails(props) {
         result = await result.json();
         setData(result.data[0]);
         console.log(result.data[0])
-      }, []);
+    }, []);
+
+    async function IncQuanBy1(e,id) {
+        e.preventDefault();
+        setQuantity(1)
+        console.log(id)
+        let result = await fetch("http://localhost:8000/cart/" + id, {
+            method: 'POST',
+            body: JSON.stringify(quantity)
+        });
+        console.log(result)
+    }
 
     return (
         <>
@@ -27,7 +40,9 @@ function ProductDetails(props) {
                         <div>
                             <img src={data.image} alt="pizza" className="img-fluid mx-5"/>
                             <div className="prodBtn mt-2">
-                                <Button variant="warning">Add To Cart</Button>
+                                <Button variant="warning"  onClick={(e) => {
+                                    IncQuanBy1(e,props.match.params._id);
+                                }}>Add To Cart</Button>
                                 <Button variant="primary">Order Now</Button>
                             </div>
                         </div>
