@@ -94,3 +94,35 @@
   font-size: 25px;
   color: #F59E0D;
 }
+.cartListing{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  
+}
+/* 
+footer{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+} */
+.cart-img{
+  width: 150px
+}
+.abc{
+  margin: auto 0;
+  font-weight: bold;
+}
+.totalprice{
+display: flex;
+justify-content: flex-end;
+margin-bottom: 50px;
+}
+.tpchild{
+  margin-right: 120px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #850f0f
+}

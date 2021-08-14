@@ -1,9 +1,22 @@
-import React, {useContext} from 'react'
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import {Navbar, Nav, Container} from 'react-bootstrap' 
 import '../App.css'
 
 function Navbars() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        getData()
+    }, []);
+
+
+    async function getData() {
+        let result = await fetch("http://localhost:8000/cart");
+        result = await result.json();
+        setData(result.data);
+        console.log(result.data)
+    }
 
     return (
         <>
@@ -21,7 +34,7 @@ function Navbars() {
                             <Link to="/pizzas" className="unlink mx-2 navStyle mt-2">Pizzas</Link>
                             <Link to="/cart" className="unlink mx-2">
                                 <div className="cart">
-                                    <span className="mx-2 text-white brand">0</span>
+                                    <span className="mx-2 text-white brand">{data.length}</span>
                                     <img src="/images/cart.png" alt="cart-icon" style={{color:'black'}}/>
                                 </div>
                             </Link>
