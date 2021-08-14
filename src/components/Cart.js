@@ -96,7 +96,7 @@ function Cart() {
                     ))
                 }
                 <div className="totalprice">
-                    <div className="tpchild">Total Price : ₹ {totalPrice}</div>
+                    <div className="tpchild">Total Amount : ₹ {totalPrice}</div>
                 </div>
             </Container>
         </>
