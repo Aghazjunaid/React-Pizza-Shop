@@ -42,7 +42,7 @@ function Products() {
                 {
                    data.slice(0, 6).map(product => (
                     <Link to={`/pizza/${product._id}`} style={{ textDecoration: 'none' }} className="col-md-4 mt-2 text-center">
-                        <div >
+                        <div key={product._id}>
                             <img src={product.image} alt="pizza" className="img-fluid"/>
                             <h2 style={{color:"black"}}>{product.name}</h2>
                             <div style={{fontSize:"17px", color:"black"}}>{product.description}</div>

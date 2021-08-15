@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../App.css'
-import { Row, Button, Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 import Navbars from './Navbar'
-import Footer from './Footer'
 
 function Cart() {
     const [data, setData] = useState([]);
@@ -75,7 +74,7 @@ function Cart() {
                 </div>
                 {
                     data.map(cart => (
-                        <div className="cartListing">
+                        <div className="cartListing"  key={cart._id}>
                             <img src={cart?.product?.image} alt="pizza" className="img-fluid cart-img" />
                             <div className="abc">
                                 <Button variant="warning" style={{ fontSize: "20px" }} onClick={() => {
