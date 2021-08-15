@@ -11,15 +11,17 @@ function ProductDetails(props) {
 
     console.log(props.match.params._id);
 
-    useEffect(async () => {
-        let result = await fetch(
-          "http://localhost:8000/product/" + props.match.params._id
-        );
+    useEffect(() => {
+        getData()
+    }, []);
+
+    async function getData() {
+        let result = await fetch("http://localhost:8000/product/"+props.match.params._id);
         result = await result.json();
         setData(result.data[0]);
         console.log(result.data[0])
-    }, []);
-
+    }
+    
     async function IncQuanBy1(e,id) {
         e.preventDefault();
         setQuantity(1)
@@ -53,11 +55,11 @@ function ProductDetails(props) {
                             <div style={{fontSize:"15px", color:"black"}}>{data.description}</div>
                             <div className="price mt-2" style={{color:"#850f0f"}}>₹ { data.price }</div>
                             <div className="mt-5 offer">
-                                <div><i class="bi bi-caret-right-fill"></i> Bank Offer 5% Unlimited Cashback on Pizzashop Axis Bank Credit Card</div>
-                                <div><i class="bi bi-caret-right-fill"></i>  Bank Offer 10% Off on Bank of Baroda debit card first time transaction, Terms and Condition apply</div>
-                                <div><i class="bi bi-caret-right-fill"></i>  Purchase this Pizza and Chances to Get Extra ₹500 Off on Select ACs</div>
+                                <div><i className="bi bi-caret-right-fill"></i> Bank Offer 5% Unlimited Cashback on Pizzashop Axis Bank Credit Card</div>
+                                <div><i className="bi bi-caret-right-fill"></i>  Bank Offer 10% Off on Bank of Baroda debit card first time transaction, Terms and Condition apply</div>
+                                <div><i className="bi bi-caret-right-fill"></i>  Purchase this Pizza and Chances to Get Extra ₹500 Off on Select ACs</div>
                             </div>
-                            <div className="delivery"><i class="bi bi-truck text-dark"></i>   Delivered Within 30 min after Ordering the Pizza</div>
+                            <div className="delivery"><i className="bi bi-truck text-dark"></i>   Delivered Within 30 min after Ordering the Pizza</div>
                         </div>
                     </Col>
                 </Row>
